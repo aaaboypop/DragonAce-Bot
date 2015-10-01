@@ -1667,6 +1667,14 @@ for(e=0;e==0;)
 	else if(p==2)
 	{
 		printf("\n---------- 2 Card Patten ----------\n\n");
+		
+		
+		
+		
+		
+		//
+		
+		
 	
 	
 	
@@ -1684,6 +1692,243 @@ for(e=0;e==0;)
 		printf("\n---------- 1 Card Patten ----------\n\n");
 	
 	
+		if(np!=1)
+		{	
+			for(i=0;i<4;i++)
+			{
+				if	((
+						(a[i+1]==10) // 10
+					)
+					&&
+					(a[i+1]=11) // 11
+					&&
+					(hc[i+1]==ac[1]))
+				{
+					printf("Select Card %d \n",i+1);
+					np=1;
+				}
+			}
+		}	
+		
+		
+		if(np!=1)
+		{	
+			for(i=0;i<4;i++)
+			{
+				if	(	
+						(
+							(a[i+1]==1) // 1
+						)
+						&&
+						(a[i+1]=13) // 13
+						&&
+						(hc[i+1]==ac[1])
+					)
+				{
+					printf("Select Card %d \n",i+1);
+					np=1;
+				}
+			}
+		}	
+		
+		
+		//RSF C
+		if(np!=1)
+		{	
+			for(i=0;i<4;i++)
+			{
+				if	(
+						(
+							(a[i+1]==11)||(a[i+1]==12)||(a[i+1]==13) // 11 | 12 | 13
+						)
+						&&
+						(
+							(a[i+1]=a[i+1]+1)||(a[i+1]=a[i+1]-1) // a +|- 1
+						)
+						&&
+						(hc[i+1]==ac[1])
+					)
+				{
+					printf("Select Card %d \n",i+1);
+					np=1;
+				}
+			}
+		}	
+		
+		
+		//ST F
+		if(np!=1)
+		{	
+			for(i=0;i<4;i++)
+			{
+				if	(
+						(
+							(a[i+1]==h[i+1]+1)||(a[i+1]==h[i+1]-1)
+						)
+						&&
+						(hc[i+1]==ac[1])
+					)
+				{
+					printf("Select Card %d \n",i+1);
+					np=1;
+				}
+			}
+		}	
+		
+		//P F
+			if(np!=1)
+		{	
+			for(i=0;i<4;i++)
+			{
+				if	
+					(
+						(
+							(a[i+1]==h[i+1])
+						)
+						&&
+						(hc[i+1]==ac[1])
+					)
+				{
+					printf("Select Card %d \n",i+1);
+					np=1;
+				}
+			}
+		}	
+		
+
+		
+		
+		//ST F2
+		if(np!=1)
+		{	
+			for(i=0;i<4;i++)
+			{
+				if	(
+						(
+							(a[i+1]==h[i+1]+2)||(a[i+1]==h[i+1]-2)
+						)
+						&&
+						(hc[i+1]==ac[1])
+					)
+				{
+					printf("Select Card %d \n",i+1);
+					np=1;
+				}
+			}
+		}	
+		
+		
+		
+		
+		//P
+			if(np!=1)
+		{	
+			for(i=0;i<4;i++)
+			{
+				if	
+					(
+						(a[i+1]==h[i+1])
+					)
+				{
+					printf("Select Card %d \n",i+1);
+					np=1;
+				}
+			}
+		}	
+		
+		
+		
+		
+		//ST 1
+		if(np!=1)
+		{	
+			for(i=0;i<4;i++)
+			{
+				if	(
+						(a[i+1]==h[i+1]+1)||(a[i+1]==h[i+1]-1)
+					)
+				{
+					printf("Select Card %d \n",i+1);
+					np=1;
+				}
+			}
+		}	
+		
+		
+		//ST 2
+		if(np!=1)
+		{	
+			for(i=0;i<4;i++)
+			{
+				if	(
+						(a[i+1]==h[i+1]+2)||(a[i+1]==h[i+1]-2)
+					)
+				{
+					printf("Select Card %d \n",i+1);
+					np=1;
+				}
+			}
+		}	
+		
+		
+		//ST F3
+		if(np!=1)
+		{	
+			for(i=0;i<4;i++)
+			{
+				if	(
+						(
+							(a[i+1]==h[i+1]+3)||(a[i+1]==h[i+1]-3)
+						)
+						&&
+						(hc[i+1]==ac[1])
+					)
+				{
+					printf("Select Card %d \n",i+1);
+					np=1;
+				}
+			}
+		}	
+		
+		
+		//ST 3
+		if(np!=1)
+		{	
+			for(i=0;i<4;i++)
+			{
+				if	(
+						(a[i+1]==h[i+1]+3)||(a[i+1]==h[i+1]-32)
+					)
+				{
+					printf("Select Card %d \n",i+1);
+					np=1;
+				}
+			}
+		}	
+		
+		
+		//F
+		if(np!=1)
+		{	
+			for(i=0;i<4;i++)
+			{
+				if	(hc[i+1]==ac[1])
+				{
+					printf("Select Card %d \n",i+1);
+					np=1;
+				}
+			}
+		}	
+		
+		
+		//Random Card
+		r = rand() % 4 + 1;
+		printf("Select Card %d is Random\n",r);
+		
+		printf("----------------------------------------------------------\n");
+		printf("\n");
+		
+		
 	
 	}//end 1 card patten
 	

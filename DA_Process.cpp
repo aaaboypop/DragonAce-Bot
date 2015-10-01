@@ -1681,8 +1681,7 @@ for(e=0;e==0;)
 	}//end 2 card patten
 	
 	
-	
-	
+		
 	
 	
 		
@@ -1766,7 +1765,7 @@ for(e=0;e==0;)
 							(a[i+1]==(h[i+1]+1))||(a[i+1]==(h[i+1]-1))
 						)
 						&&
-						(hc[i+1]==ac[1])
+						(hc[i+1]==ac[i+1])
 					)
 				{
 					printf("Select Card %d \n",i+1);
@@ -1786,7 +1785,7 @@ for(e=0;e==0;)
 							(a[i+1]==h[i+1])
 						)
 						&&
-						(hc[i+1]==ac[1])
+						(hc[i+1]==ac[i+1])
 					)
 				{
 					printf("Select Card %d \n",i+1);
@@ -1808,7 +1807,7 @@ for(e=0;e==0;)
 							(a[i+1]==(h[i+1]+2))||(a[i+1]==(h[i+1]-2))
 						)
 						&&
-						(hc[i+1]==ac[1])
+						(hc[i+1]==ac[i+1])
 					)
 				{
 					printf("Select Card %d \n",i+1);
@@ -1881,7 +1880,7 @@ for(e=0;e==0;)
 							(a[i+1]==(h[i+1]+3))||(a[i+1]==(h[i+1]-3))
 						)
 						&&
-						(hc[i+1]==ac[1])
+						(hc[i+1]==ac[i+1])
 					)
 				{
 					printf("Select Card %d \n",i+1);

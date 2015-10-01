@@ -118,9 +118,8 @@ for(e=0;e==0;)
 		//แสดงรูปแบบการคำนวน
 		printf("\n---------- 4 Card Patten ----------\n\n");
 		
-		
-		//Royal Straight Flush
-		//RSF 1
+		//การ Royal Straight Flush
+		//Royal Straight Flush (1)
 		for(i=0;i<4;i++)
 		{
 			if	(
@@ -142,7 +141,7 @@ for(e=0;e==0;)
 			}
 		}
 		
-		//RSF 2
+		//Royal Straight Flush (2)
 		for(i=0;i<4;i++)
 		{
 			if	(
@@ -164,7 +163,7 @@ for(e=0;e==0;)
 			}
 		}
 		
-		//RSF 3
+		//Royal Straight Flush (3)
 		for(i=0;i<4;i++)
 		{
 			if	(
@@ -186,7 +185,7 @@ for(e=0;e==0;)
 			}
 		}
 		
-		//RSF 4
+		//Royal Straight Flush (4)
 		for(i=0;i<4;i++)
 		{
 			if	(
@@ -208,7 +207,7 @@ for(e=0;e==0;)
 			}
 		}
 		
-		//RSF 5
+		//Royal Straight Flush (5)
 		for(i=0;i<4;i++)
 		{
 			if	(
@@ -230,6 +229,7 @@ for(e=0;e==0;)
 			}
 		}
 		
+		//การ Lucky Seven Flush
 		//Lucky Seven Flush
 		if(np!=1)
 		{
@@ -255,6 +255,7 @@ for(e=0;e==0;)
 			}
 		}
 		
+		//การ Lucky Seven
 		//Lucky Seven
 		if(np!=1)
 		{
@@ -274,6 +275,7 @@ for(e=0;e==0;)
 			}
 		}
 		
+		//การ Five Flush
 		//Five Flush
 		if(np!=1)
 		{
@@ -299,6 +301,7 @@ for(e=0;e==0;)
 			}
 		}
 		
+		//การ Five Card
 		//Five Card
 		if(np!=1)
 		{
@@ -318,10 +321,11 @@ for(e=0;e==0;)
 			}
 		}
 		
+		//การ House Flush
 		//House Flush
 		if(np!=1)
 		{
-			//HF 1
+			//House Flush (1)
 			for(i=0;i<4;i++)
 			{
 				if	(
@@ -346,7 +350,7 @@ for(e=0;e==0;)
 			}
 		
 		
-			//HF 2 
+			//House Flush (2)
 			for(i=0;i<4;i++)
 			{
 				if	(
@@ -369,7 +373,7 @@ for(e=0;e==0;)
 			}
 		
 		
-			//HF 3
+			//House Flush(3)
 			for(i=0;i<4;i++)
 			{
 				if	(
@@ -396,7 +400,7 @@ for(e=0;e==0;)
 		//Straight Flush
 		if(np!=1)
 		{
-			//STF 1
+			//Straight Flush (1)
 			for(i=0;i<4;i++)
 			{
 				if	(
@@ -421,7 +425,7 @@ for(e=0;e==0;)
 			}
 				
 			
-			//STF 2
+			//Straight Flush(2)
 			for(i=0;i<4;i++)
 			{
 				if	(
@@ -443,7 +447,7 @@ for(e=0;e==0;)
 				}
 			}
 			
-			//STF 3
+			//Straight Flush (3)
 			for(i=0;i<4;i++)
 			{
 				if	(
@@ -465,7 +469,7 @@ for(e=0;e==0;)
 				}
 			}
 			
-			//STF 4
+			//Straight Flush (4)
 			for(i=0;i<4;i++)
 			{
 				if	(
@@ -489,7 +493,8 @@ for(e=0;e==0;)
 			
 		}
 		
-		//Four Card
+		//การ Four Card
+		//Four Card (1)
 		if(np!=1)
 		{
 			for(i=0;i<4;i++)
@@ -508,7 +513,7 @@ for(e=0;e==0;)
 			}	
 		}
 		
-		//Four Card 2
+		//Four Card (2)
 		if(np!=1)
 		{
 			for(i=0;i<4;i++)
@@ -526,11 +531,12 @@ for(e=0;e==0;)
 				}
 			}	
 		}
-			
+		
+		//การ Full House
 		//Full House
 		if(np!=1)
 		{
-			//FH 1
+			//Full House (1)
 			for(i=0;i<4;i++)
 			{
 				if	(
@@ -549,7 +555,7 @@ for(e=0;e==0;)
 			}
 		
 		
-			//FH 2
+			//Full House (2)
 			for(i=0;i<4;i++)
 			{
 				if	(
@@ -566,7 +572,7 @@ for(e=0;e==0;)
 			}
 			
 			
-			//FH 3
+			//Full House (3)
 			for(i=0;i<4;i++)
 			{
 				if	(
@@ -585,10 +591,11 @@ for(e=0;e==0;)
 		
 		int st=0;
 		
+		//การ Straight
 		//Straight
 		if(np!=1)
 		{
-			//ST 1
+			//Straight (1)
 			for(i=0;i<4;i++)
 			{
 			if	(
@@ -606,11 +613,11 @@ for(e=0;e==0;)
 				}
 			}
 			
-			//ST !=1
+			
 			if(st!=1)
 			{
 			
-				//ST 2
+				//Straight (2)
 					
 			
 				for(i=0;i<4;i++)
@@ -629,7 +636,7 @@ for(e=0;e==0;)
 				}
 				
 				
-				//ST 3
+				//Straight (3)
 					
 			
 				for(i=0;i<4;i++)
@@ -649,7 +656,7 @@ for(e=0;e==0;)
 				
 				
 			
-				//ST 4	
+				//Straight (4)	
 		
 				
 				for	(i=0;i<4;i++)
@@ -668,7 +675,7 @@ for(e=0;e==0;)
 				}
 				
 				
-				//ST 5
+				//Straight(5)
 		
 				
 				for	(i=0;i<4;i++)
@@ -688,7 +695,7 @@ for(e=0;e==0;)
 				
 				
 				
-				//ST 6
+				//Straight(6)
 				
 				
 				for(i=0;i<4;i++)
@@ -708,7 +715,7 @@ for(e=0;e==0;)
 				
 				
 				
-				//ST 7
+				//Straight (7)
 				
 				
 				for(i=0;i<4;i++)
@@ -728,6 +735,7 @@ for(e=0;e==0;)
 			}
 		}
 		
+		//การ Flush
 		//Flush
 		if(np!=1)
 		{
@@ -744,10 +752,11 @@ for(e=0;e==0;)
 			}
 		}
 		
+		//การ Three Seven
 		//Three Seven
 		if(np!=1)
 		{
-			//TS 1
+			//Three Seven (1)
 			for(i=0;i<4;i++)
 			{
 				if	(
@@ -763,7 +772,7 @@ for(e=0;e==0;)
 				}
 			}
 			
-			//TS 2
+			//Three Seven (2)
 			for(i=0;i<4;i++)
 			{
 				if	(
@@ -779,7 +788,7 @@ for(e=0;e==0;)
 				}
 			}	
 			
-			//TS 3
+			//Three Seven (3)
 			for(i=0;i<4;i++)
 			{
 				if	(
@@ -795,11 +804,12 @@ for(e=0;e==0;)
 				}
 			}
 		}
-			
+		
+		//การ Three Card
 		//Three Card
 		if(np!=1)
 		{
-			//TC 1
+			//Three Card (1)
 			for(i=0;i<4;i++)
 			{
 				if	(
@@ -814,7 +824,7 @@ for(e=0;e==0;)
 			}
 			
 			
-			//TC 2
+			//Three Card (2)
 			for(i=0;i<4;i++)
 			{
 				if	(
@@ -832,7 +842,7 @@ for(e=0;e==0;)
 			
 			
 			
-			//TC 3
+			//Three Card (3)
 			for(i=0;i<4;i++)
 			{
 				if	(
@@ -849,10 +859,11 @@ for(e=0;e==0;)
 			}	
 		}
 		
+		//การ Two Pair
 		//Two Pair
 		if(np!=1)
 		{
-			//TP 1
+			//Two Pair (1)
 			for(i=0;i<4;i++)
 			{
 				if	(
@@ -868,7 +879,7 @@ for(e=0;e==0;)
 				}
 			}
 			
-			//TP 2
+			//Two Pair (2)
 			for(i=0;i<4;i++)
 			{
 				if	(
@@ -885,7 +896,7 @@ for(e=0;e==0;)
 			}
 			
 			
-			//TP 3
+			//Two Pair (3)
 			for(i=0;i<4;i++)
 			{
 				if	(
@@ -902,6 +913,7 @@ for(e=0;e==0;)
 			}
 		}
 		
+		//การ One Pair
 		//One Pair
 		if(np!=1)
 		{
@@ -926,7 +938,7 @@ for(e=0;e==0;)
 		//Mini Straight
 		if(np!=1)
 		{
-			//MS 1
+			//Mini Straight (1)
 			for(i=0;i<4;i++)
 			{
 				if	(
@@ -941,7 +953,7 @@ for(e=0;e==0;)
 			}
 			
 			
-			//MS 2
+			//Mini Straight (2)
 			for(i=0;i<4;i++)
 			{
 				if	(
@@ -957,7 +969,7 @@ for(e=0;e==0;)
 				}
 			}
 			
-			//MS 3
+			//Mini Straight (3)
 			for(i=0;i<4;i++)
 			{
 				if	(
@@ -973,7 +985,7 @@ for(e=0;e==0;)
 				}
 			}	
 			
-			//MS 4
+			//Mini Straight (4)
 			for(i=0;i<4;i++)
 			{
 				if	(
@@ -987,7 +999,7 @@ for(e=0;e==0;)
 				}
 			}
 			
-			//MS 5
+			//Mini Straight (5)
 			for(i=0;i<4;i++)
 			{
 				if	(
@@ -1001,7 +1013,7 @@ for(e=0;e==0;)
 				}
 			}
 			
-			//MS 6
+			//Mini Straight (6)
 			for(i=0;i<4;i++)
 			{
 				if	(
@@ -1016,7 +1028,7 @@ for(e=0;e==0;)
 			}
 			
 			
-			//MS 7
+			//Mini Straight (7)
 			for(i=0;i<4;i++)
 			{
 				if	(
@@ -1051,8 +1063,7 @@ for(e=0;e==0;)
 		printf("\n---------- 3 Card Patten ----------\n\n");
 		
 		//เพิ่มโอกาส Straight Flush
-		//Straight++
-		//STF 1
+		//Straight Flush Chance
 		for(i=0;i<4;i++)
 		{
 			if	(
@@ -1076,8 +1087,8 @@ for(e=0;e==0;)
 			}
 		}
 		
-		//การ Straight 1
-		//ST 1
+		//เพิ่มโอกาส Straight 1
+		//Straight Chance (1)
 		if(np!=1)
 		{
 			for(i=0;i<4;i++)
@@ -1099,7 +1110,7 @@ for(e=0;e==0;)
 			}
 		
 			//เพิ่มโอกาส Straight Flush 2
-			//STF 2
+			//Straight Flush Chance (2)
 			if(np!=1)
 			{
 				for(i=0;i<4;i++)
@@ -1126,7 +1137,7 @@ for(e=0;e==0;)
 					
 			
 			//การ Straight 2
-			//ST 2
+			//Straight Chance (2)
 			if(np!=1)
 			{
 				for(i=0;i<4;i++)
@@ -1148,7 +1159,7 @@ for(e=0;e==0;)
 			}	
 			
 			//เพิ่มโอกาส Straight Flush 3
-			//STF 3	
+			//Straight Flush Chance (4)
 			if(np!=1)
 			{
 				for(i=0;i<4;i++)
@@ -1173,8 +1184,8 @@ for(e=0;e==0;)
 				}
 			}	
 			
-			//การ Straight 3
-			//ST 3	
+			//เพิ่มโอกาส Straight 3
+			//Straight Chance(3)
 			if(np!=1)
 			{
 				for(i=0;i<4;i++)
@@ -1196,7 +1207,7 @@ for(e=0;e==0;)
 			}	
 				
 			//เพิ่มโอกาส Straight Flush 4
-			//STF 4	
+			//Straight Flush Chance (4)
 			if(np!=1)
 			{	
 				for	(i=0;i<4;i++) //พบการ Flush
@@ -1223,8 +1234,8 @@ for(e=0;e==0;)
 				}
 			}	
 			
-			//การ Straight 4
-			//ST 4	
+			//เพิ่มโอกาส Straight 4
+			//Straight Chance(4)
 			if(np!=1)
 			{	
 				for	(i=0;i<4;i++)
@@ -1248,7 +1259,7 @@ for(e=0;e==0;)
 			}	
 			
 			//เพิ่มโอกาส Straight Flush 5
-			//STF 5
+			//Straight Flush Chance (5)
 			if(np!=1)
 			{	
 				for(i=0;i<4;i++)
@@ -1275,8 +1286,8 @@ for(e=0;e==0;)
 				}
 			}	
 			
-			//การ Straight 5
-			//ST 5
+			//เพิ่มโอกาส Straight 5
+			//Straight Chance (5)
 			if(np!=1)
 			{	
 				for(i=0;i<4;i++)
@@ -1300,7 +1311,7 @@ for(e=0;e==0;)
 			}	
 			
 			//เพิ่มโอกาส Straight Flush 6
-			//STF 6	
+			//Straight Flush Chance (6)
 			if(np!=1)
 			{	
 				for(i=0;i<4;i++)
@@ -1327,8 +1338,8 @@ for(e=0;e==0;)
 				}
 			}	
 			
-			//การ Straight 6
-			//ST 6	
+			//เพิ่มโอกาส Straight 6
+			//Straight Chance (6)
 			if(np!=1)
 			{	
 				for(i=0;i<4;i++)
@@ -1409,7 +1420,7 @@ for(e=0;e==0;)
 		//เพิ่มโอกาส Straight 1
 		//การ Mini Straight
 		//Straight Chance 1
-		//MS
+		//Mini Straight
 		if(np!=1)
 		{
 			for(i=0;i<4;i++)
@@ -1436,7 +1447,7 @@ for(e=0;e==0;)
 		//เพิ่มโอกาส Straight 2
 		//การ Mini Straight
 		//Straight Chance 2
-		//MS
+		//Mini Straight
 		if(np!=1)
 		{
 			for(i=0;i<4;i++)
@@ -1844,7 +1855,7 @@ for(e=0;e==0;)
 			}
 		}	
 		
-		//เพิ่มโอกาส ST หาเลขเหมือนกัน +|- 2
+		//เพิ่มโอกาส Straight หาเลขเหมือนกัน +|- 2
 		//Straight Chance +|- 2
 		if(np!=1)
 		{	
@@ -1880,7 +1891,7 @@ for(e=0;e==0;)
 			}
 		}	
 		
-		//เพิ่มโอกาส ST หาเลขเหมือนกัน +|- 3
+		//เพิ่มโอกาส Straight หาเลขเหมือนกัน +|- 3
 		//Straight Chance +|- 3
 		if(np!=1)
 		{	

@@ -1,14 +1,23 @@
-#include<windows.h>
-#include<stdio.h>
-#include<iostream>
-#include<conio.h>
-#include<stdlib.h>
+#include <conio.h>
+#include <stdio.h>
+#include <Windows.h>
+#include <winuser.h>
+#include <iostream>
+#include <stdlib.h>
 #define textcolor(txt,back) SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), back*16+txt)
 #define resetcolor() SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 15)
-int p,i,e,r;
-main()
+#define showr if(i==0){AAA = "1";}else if(i==1){AAA = "2";}else if(i==2){AAA = "3";}else if(i==3){AAA = "4";} HWND hwnd = GetDesktopWindow(); toClipboard(hwnd, AAA);
+int i,eloop=0,r,p,a[5],ac[5],h[5],hc[5];
+
+void toClipboard(HWND hwnd, const std::string &s);
+
+int main()
 {
-for(e=0;e==0;)
+
+using namespace std;
+string AAA;
+
+while(eloop<1)
 {
 	int f=0,np=0;
 	//ตัวแปร f หมายถึงสีเหมือนกัน (Flush)
@@ -19,6 +28,7 @@ for(e=0;e==0;)
 	
 	//รอการป้อนรูปแบบการ์ด
 	//wait to type card patten.
+	
 	printf("DA Process Core v0.1\n");
 	printf("\n");
 	
@@ -32,13 +42,22 @@ for(e=0;e==0;)
 		
 	printf("\n");
 	printf("Enter Card Unit [0-4] = ");
-	scanf("%d",&p); //เก็บรูปแบบการ์ดไว้ในตัวแปร p
 	
-	//ตัวแปร a หมายถึงการ์ดที่ลงแล้ว
+		//ตัวแปร a หมายถึงการ์ดที่ลงแล้ว
 	//ตัวแปร ac หมายถึงสีของการ์ดที่ลงแล้ว
 	//ตัวแปร h หมายถึงการ์ดบนมือ
 	//ตัวแปร hc หมายถึงสีของการ์ดบนมือ
-	int a[5],ac[5],h[5],hc[5]; //สร้างตัวแปรประเภทอาเรย์ชื่อ a, ac, h, hc จำนวน 5 (0-4) 
+	//สร้างตัวแปรประเภทอาเรย์ชื่อ a, ac, h, hc จำนวน 5 (0-4) 
+	
+	scanf("%1d%2d%1d%2d%1d%2d%1d%2d%1d%2d%1d%2d%1d%2d%1d%2d%1d",&p,&a[1],&ac[1],&a[2],&ac[2],&a[3],&ac[3],&a[4],&ac[4],&h[1],&hc[1],&h[2],&hc[2],&h[3],&hc[3],&h[4],&hc[4]);
+	
+	/*
+	scanf("%d",&p); //เก็บรูปแบบการ์ดไว้ในตัวแปร p
+	if(p!=0&&p!=1&&p!=2&&p!=3&&p!=4)
+	{
+	printf("\n\nError\n\n");
+	continue;
+	}
 	
 	printf("\n");
 	//การรับข้อมูลและทำซ้ำของการ์ดที่ลงแล้ว
@@ -47,9 +66,13 @@ for(e=0;e==0;)
 	{
 		printf("Enter Number of Card %d = ",i+1);
 		scanf("%d",&a[i+1]);
+		if(a[i+1]<1||a[i+1]>13)
+		{printf("\n\nError\n\n"); break;}
 		
 		printf("Enter Card %d Color = ",i+1);
 		scanf("%d",&ac[i+1]);
+		if(ac[i+1]<1||ac[i+1]>3)
+		{printf("\n\nError\n\n"); break;}
 		printf("\n");
 	}
 	
@@ -63,12 +86,18 @@ for(e=0;e==0;)
 	{
 		printf("Enter Number of Card %d = ",i+1);
 		scanf("%d",&h[i+1]);
+		if(h[i+1]<1||h[i+1]>13)
+		{printf("\n\nError\n\n"); break;}
 		
 		printf("Enter Card %d Color = ",i+1);
 		scanf("%d",&hc[i+1]);
+		if(hc[i+1]<1||hc[i+1]>3)
+		{printf("\n\nError\n\n"); break;}
 		printf("\n");
 	}
+	*/
 	
+
 	//ตรวจสอบการ Flush ของการ์ดที่ลงแล้ว (รูปแบบ 4 ใบ)
 	//Flush Check 4 Card patten
 	if(p==4)
@@ -146,7 +175,7 @@ for(e=0;e==0;)
 					)
 				)
 			{
-				system("cls");
+				system("cls"); showr
 				printf("Select Card %d is Royal Straight Flush\n",i+1);
 				np=1;
 			}
@@ -169,7 +198,7 @@ for(e=0;e==0;)
 					)
 				)
 			{
-				system("cls");
+				system("cls"); showr
 				printf("Select Card %d is Royal Straight Flush\n",i+1);
 				np=1;
 			}
@@ -192,7 +221,7 @@ for(e=0;e==0;)
 					)
 				)
 			{
-				system("cls");
+				system("cls"); showr
 				printf("Select Card %d is Royal Straight Flush\n",i+1);
 				np=1;
 			}
@@ -215,7 +244,7 @@ for(e=0;e==0;)
 					)
 				)
 			{
-				system("cls");
+				system("cls"); showr
 				printf("Select Card %d is Royal Straight Flush\n",i+1);
 				np=1;
 			}
@@ -238,7 +267,7 @@ for(e=0;e==0;)
 					)
 				)
 			{
-				system("cls");
+				system("cls"); showr
 				printf("Select Card %d is Royal Straight Flush\n",i+1);
 				np=1;
 			}
@@ -264,7 +293,7 @@ for(e=0;e==0;)
 						)
 					)
 				{
-					system("cls");
+					system("cls"); showr
 					printf("Select Card %d is Lucky Seven Flush\n",i+1);
 					np=1;
 				}
@@ -285,7 +314,7 @@ for(e=0;e==0;)
 						(h[i+1]==7)//การ์ดบนมือคือ 7
 					)
 				{
-					system("cls");
+					system("cls"); showr
 					printf("Select Card %d is Lucky Seven \n",i+1);
 					np=1;
 				}
@@ -312,7 +341,7 @@ for(e=0;e==0;)
 						)
 					)
 				{
-					system("cls");
+					system("cls"); showr
 					printf("Select Card %d is Five Flush\n",i+1);
 					np=1;
 				}
@@ -333,7 +362,7 @@ for(e=0;e==0;)
 						(h[i+1]==a[1]) //การ์ดบนมือเลขเดียวกับการ์ดที่ลงแล้ว
 					)
 				{
-					system("cls");
+					system("cls"); showr
 					printf("Select Card %d is Five Card\n",i+1);
 					np=1;
 				}
@@ -363,7 +392,7 @@ for(e=0;e==0;)
 						)
 					)
 				{
-					system("cls");
+					system("cls"); showr
 					printf("Select Card %d is House Flush\n",i+1);
 					np=1;
 				}
@@ -387,7 +416,7 @@ for(e=0;e==0;)
 						)
 					)
 				{
-					system("cls");
+					system("cls"); showr
 					printf("Select Card %d is House Flush\n",i+1);
 					np=1;
 				}
@@ -411,7 +440,7 @@ for(e=0;e==0;)
 						)
 					)
 				{
-					system("cls");
+					system("cls"); showr
 					printf("Select Card %d is House Flush\n",i+1);
 					np=1;
 				}
@@ -441,7 +470,7 @@ for(e=0;e==0;)
 						)
 					)
 				{
-					system("cls");
+					system("cls"); showr
 					printf("Select Card %d is Straight Flush\n",i+1);
 					np=1;
 				}
@@ -465,7 +494,7 @@ for(e=0;e==0;)
 						)
 					)
 				{
-					system("cls");
+					system("cls"); showr
 					printf("Select Card %d is Straight Flush\n",i+1);
 					np=1;
 				}
@@ -488,7 +517,7 @@ for(e=0;e==0;)
 						)
 					)
 				{
-					system("cls");
+					system("cls"); showr
 					printf("Select Card %d is Straight Flush\n",i+1);
 					np=1;
 				}
@@ -511,7 +540,7 @@ for(e=0;e==0;)
 						)
 					)
 				{
-					system("cls");
+					system("cls"); showr
 					printf("Select Card %d is Straight Flush\n",i+1);
 					np=1;
 				}
@@ -533,7 +562,7 @@ for(e=0;e==0;)
 						(h[i+1]==a[1]) //การ์ดบนมือเลขเดียวกับการ์ดที่ลงแล้ว
 					)
 				{
-					system("cls");
+					system("cls"); showr
 					printf("Select Card %d is Four Card\n",i+1);
 					np=1;
 				}
@@ -553,7 +582,7 @@ for(e=0;e==0;)
 						(h[i+1]==a[1]) //การ์ดบนมือเลขเดียวกับการ์ดที่ลงแล้ว
 					)
 				{
-					system("cls");
+					system("cls"); showr
 					printf("Select Card %d is Four Card\n",i+1);
 					np=1;
 				}
@@ -577,7 +606,7 @@ for(e=0;e==0;)
 						)
 					)
 				{
-					system("cls");
+					system("cls"); showr
 					printf("Select Card %d is Full House\n",i+1);
 					np=1;
 				}
@@ -595,7 +624,7 @@ for(e=0;e==0;)
 						(h[i+1]==a[4]) //การ์ดบนมือเลขเดียวกับการ์ดที่ลงแล้ว(ลำดับที่4)
 					)
 				{
-					system("cls");
+					system("cls"); showr
 					printf("Select Card %d is Full House\n",i+1);
 					np=1;
 				}
@@ -613,7 +642,7 @@ for(e=0;e==0;)
 						(h[i+1]==a[1]) //การ์ดบนมือเลขเดียวกับการ์ดที่ลงแล้ว(ลำดับที่1)
 					)
 				{
-					system("cls");
+					system("cls"); showr
 					printf("Select Card %d is Full House\n",i+1);
 					np=1;
 				}
@@ -638,7 +667,7 @@ for(e=0;e==0;)
 					//การ์ดบนมือมีเลขเท่ากับการ์ดที่ลงไปแล้วใบใดใบหนึ่ง +|- 1
 				)
 				{
-					system("cls");
+					system("cls"); showr
 					printf("Select Card %d is Straight\n",i+1);
 					st=1;
 					np=1;
@@ -662,7 +691,7 @@ for(e=0;e==0;)
 							((h[i+1]==(a[1]-1))||(h[i+1]==(a[3]+1))) //มีการ์ดบนมือ การ์ดที่ลงแล้ว น้อยที่สุด -1 หรือ มากที่สุด +1
 						)
 					{
-						system("cls");
+						system("cls"); showr
 						printf("Select Card %d is Straight\n",i+1);
 						np=1;
 					}
@@ -682,7 +711,7 @@ for(e=0;e==0;)
 							((h[i+1]==(a[2]-1))||(h[i+1]==(a[2]+3))) //มีการ์ดบนมือ การ์ดที่ลงแล้ว น้อยที่สุด -1 หรือ มากที่สุด +1 
 						)
 					{
-						system("cls");
+						system("cls"); showr
 						printf("Select Card %d is Straight\n",i+1);
 						np=1;
 					}
@@ -703,7 +732,7 @@ for(e=0;e==0;)
 							(h[i+1]==a[2]+1) // 6
 						)
 					{
-						system("cls");
+						system("cls"); showr
 						printf("Select Card %d is Straight\n",i+1);
 						np=1;
 					}
@@ -723,7 +752,7 @@ for(e=0;e==0;)
 							(h[i+1]==a[3]+1) // 6
 						)
 					{
-						system("cls");
+						system("cls"); showr
 						printf("Select Card %d is Straight\n",i+1);
 						np=1;
 					}
@@ -744,7 +773,7 @@ for(e=0;e==0;)
 							(h[i+1]==(a[1]+1)) // 5
 						)
 					{
-						system("cls");
+						system("cls"); showr
 						printf("Select Card %d is Straight\n",i+1);
 						np=1;
 					}
@@ -765,7 +794,7 @@ for(e=0;e==0;)
 							(h[i+1]==(a[2]+1)) // 5
 						)
 					{
-						system("cls");
+						system("cls"); showr
 						printf("Select Card %d is Straight\n",i+1);
 						np=1;
 					}
@@ -783,7 +812,7 @@ for(e=0;e==0;)
 				{
 					if	(hc[i+1]==ac[1]) //มีการ์ดบนมือ สีเดียวกับการ์ดที่ลงแล้ว
 					{
-						system("cls");
+						system("cls"); showr
 						printf("Select Card %d is Flush\n",i+1);
 						np=1;
 					}
@@ -806,7 +835,7 @@ for(e=0;e==0;)
 						(h[i+1]==7) // มีการ์ด 7
 					)
 				{
-					system("cls");
+					system("cls"); showr
 						printf("Select Card %d is Three Seven\n",i+1);
 					np=1;
 				}
@@ -823,7 +852,7 @@ for(e=0;e==0;)
 						(h[i+1]==7) // มีการ์ด 7
 					)
 				{	
-					system("cls");
+					system("cls"); showr
 						printf("Select Card %d is Three Seven\n",i+1);
 					np=1;
 				}
@@ -840,7 +869,7 @@ for(e=0;e==0;)
 						(h[i+1]==7) // มีการ์ด 7
 					)
 				{
-					system("cls");
+					system("cls"); showr
 						printf("Select Card %d is Three Seven\n",i+1);
 					np=1;
 				}
@@ -860,7 +889,7 @@ for(e=0;e==0;)
 						(h[i+1]==a[1]) //มีการ์ดบนมือเลขเดียวกับการ์ดที่ซ้ำ
 					)
 				{
-					system("cls");
+					system("cls"); showr
 					printf("Select Card %d is Three Card\n",i+1);
 					np=1;
 				}
@@ -878,7 +907,7 @@ for(e=0;e==0;)
 						(h[i+1]==a[2]) //มีการ์ดบนมือเลขเดียวกับการ์ดที่ซ้ำ
 					)
 				{
-					system("cls");
+					system("cls"); showr
 					printf("Select Card %d is Three Card\n",i+1);
 					np=1;
 				}
@@ -897,7 +926,7 @@ for(e=0;e==0;)
 						(h[i+1]==a[3]) //มีการ์ดบนมือเลขเดียวกับการ์ดที่ซ้ำ
 					)
 				{
-					system("cls");
+					system("cls"); showr
 					printf("Select Card %d is Three Card\n",i+1);
 					np=1;
 				}
@@ -919,7 +948,7 @@ for(e=0;e==0;)
 						)
 					)
 				{
-					system("cls");
+					system("cls"); showr
 					printf("Select Card %d is Two Pair\n",i+1);
 					np=1;
 				}
@@ -936,7 +965,7 @@ for(e=0;e==0;)
 						)
 					)
 				{
-					system("cls");
+					system("cls"); showr
 					printf("Select Card %d is Two Pair\n",i+1);
 					np=1;
 				}
@@ -954,7 +983,7 @@ for(e=0;e==0;)
 						)
 					)
 				{
-					system("cls");
+					system("cls"); showr
 					printf("Select Card %d is Two Pair\n",i+1);
 					np=1;
 				}
@@ -977,7 +1006,7 @@ for(e=0;e==0;)
 						(h[i+1]==a[4]) //มีการ์ดบนมือเลขเดียวกับการ์ดที่ลงใบใดใบหนึ่ง (ตำแหน่งที่ 4)
 					)
 				{
-					system("cls");
+					system("cls"); showr
 					printf("Select Card %d is One Pair\n",i+1);
 					np=1;
 				}
@@ -996,7 +1025,7 @@ for(e=0;e==0;)
 						((h[i+1]==a[1]-1)||(h[i+1]==a[2]+1)) // 4|7
 					)
 				{
-					system("cls");
+					system("cls"); showr
 					printf("Select Card %d is Mini Straight\n",i+1);
 					np=1;
 				}
@@ -1014,7 +1043,7 @@ for(e=0;e==0;)
 						((h[i+1]==a[2]-1)||(h[i+1]==a[3]+1)) // 4|7
 					)
 				{
-					system("cls");
+					system("cls"); showr
 					printf("Select Card %d is Mini Straight\n",i+1);
 					np=1;
 				}
@@ -1031,7 +1060,7 @@ for(e=0;e==0;)
 						((h[i+1]==a[3]-1)||(h[i+1]==a[4]+1)) // 4|7
 					)
 				{
-					system("cls");
+					system("cls"); showr
 					printf("Select Card %d is Mini Straight\n",i+1);
 					np=1;
 				}
@@ -1046,7 +1075,7 @@ for(e=0;e==0;)
 						(h[i+1]==(a[1]+1)) // 5
 					)
 				{
-					system("cls");
+					system("cls"); showr
 					printf("Select Card %d is Mini Straight\n",i+1);
 					np=1;
 				}
@@ -1061,7 +1090,7 @@ for(e=0;e==0;)
 						(h[i+1]==(a[2]+1)) // 5
 					)
 				{
-					system("cls");
+					system("cls"); showr
 					printf("Select Card %d is Mini Straight\n",i+1);
 					np=1;
 				}
@@ -1076,7 +1105,7 @@ for(e=0;e==0;)
 						(h[i+1]==(a[3]+1)) // 5
 					)
 				{
-					system("cls");
+					system("cls"); showr
 					printf("Select Card %d is Mini Straight\n",i+1);
 					np=1;
 				}
@@ -1094,7 +1123,7 @@ for(e=0;e==0;)
 						(h[i+1]==3) // 3
 					)
 				{
-					system("cls");
+					system("cls"); showr
 					printf("Select Card %d is Mini Straight\n",i+1);
 					np=1;
 				}
@@ -1138,7 +1167,7 @@ for(e=0;e==0;)
 					)
 				)
 			{
-				system("cls");
+				system("cls"); showr
 				printf("Select Card %d \n",i+1);
 				np=1;
 			}
@@ -1161,7 +1190,7 @@ for(e=0;e==0;)
 						)
 					)
 				{
-					system("cls");
+					system("cls"); showr
 					printf("Select Card %d \n",i+1);
 					np=1;
 				}
@@ -1187,7 +1216,7 @@ for(e=0;e==0;)
 							(hc[i+1]==ac[1])
 						)
 					{
-						system("cls");
+						system("cls"); showr
 						printf("Select Card %d \n",i+1);
 						np=1;
 					}
@@ -1211,7 +1240,7 @@ for(e=0;e==0;)
 							(h[i+1]==(a[2]+1)) // 3
 						)
 					{
-						system("cls");
+						system("cls"); showr
 						printf("Select Card %d \n",i+1);
 						np=1;
 					}
@@ -1238,7 +1267,7 @@ for(e=0;e==0;)
 							(hc[i+1]==ac[1])
 						)
 					{
-						system("cls");
+						system("cls"); showr
 						printf("Select Card %d \n",i+1);
 						np=1;
 					}
@@ -1261,7 +1290,7 @@ for(e=0;e==0;)
 							(h[i+1]==(a[1]+1)) // 2
 						)
 					{
-						system("cls");
+						system("cls"); showr
 						printf("Select Card %d \n",i+1);
 						np=1;
 					}
@@ -1290,7 +1319,7 @@ for(e=0;e==0;)
 							(hc[i+1]==ac[1])
 						)
 					{
-						system("cls");
+						system("cls"); showr
 						printf("Select Card %d \n",i+1);
 						np=1;
 					}
@@ -1315,7 +1344,7 @@ for(e=0;e==0;)
 							)
 						)
 					{
-						system("cls");
+						system("cls"); showr
 						printf("Select Card %d \n",i+1);
 						np=1;
 					}
@@ -1344,7 +1373,7 @@ for(e=0;e==0;)
 							(hc[i+1]==ac[1])
 						)
 					{
-						system("cls");
+						system("cls"); showr
 						printf("Select Card %d \n",i+1);
 						np=1;
 					}
@@ -1369,7 +1398,7 @@ for(e=0;e==0;)
 							)
 						)
 					{
-						system("cls");
+						system("cls"); showr
 						printf("Select Card %d \n",i+1);
 						np=1;
 					}
@@ -1398,7 +1427,7 @@ for(e=0;e==0;)
 							(hc[i+1]==ac[1])
 						)
 					{
-						system("cls");
+						system("cls"); showr
 						printf("Select Card %d \n",i+1);
 						np=1;
 					}
@@ -1423,7 +1452,7 @@ for(e=0;e==0;)
 							)
 						)
 					{
-						system("cls");
+						system("cls"); showr
 						printf("Select Card %d \n",i+1);
 						np=1;
 					}
@@ -1453,7 +1482,7 @@ for(e=0;e==0;)
 						(hc[i+1]==ac[1])
 					)
 				{
-					system("cls");
+					system("cls"); showr
 					printf("Select Card %d \n",i+1);
 					np=1;
 				}
@@ -1479,7 +1508,7 @@ for(e=0;e==0;)
 						)
 					)
 				{
-					system("cls");
+					system("cls"); showr
 					printf("Select Card %d \n",i+1);
 					np=1;
 				}
@@ -1507,7 +1536,7 @@ for(e=0;e==0;)
 						)
 					)
 				{
-					system("cls");
+					system("cls"); showr
 					printf("Select Card %d \n",i+1);
 					np=1;
 				}
@@ -1535,7 +1564,7 @@ for(e=0;e==0;)
 						)
 					)
 				{
-					system("cls");
+					system("cls"); showr
 					printf("Select Card %d \n",i+1);
 					np=1;
 				}
@@ -1560,7 +1589,7 @@ for(e=0;e==0;)
 						)
 					)
 				{
-					system("cls");
+					system("cls"); showr
 					printf("Select Card %d \n",i+1);
 					np=1;
 				}
@@ -1586,7 +1615,7 @@ for(e=0;e==0;)
 						)
 					)
 				{
-					system("cls");
+					system("cls"); showr
 					printf("Select Card %d \n",i+1);
 					np=1;
 				}
@@ -1617,7 +1646,7 @@ for(e=0;e==0;)
 						(hc[i+1]==ac[1]) //การ์ดบนมือมีสีเดียวกับการ์ดที่ลงแล้ว
 					)
 				{
-					system("cls");
+					system("cls"); showr
 					printf("Select Card %d \n",i+1);
 					np=1;
 				}
@@ -1643,7 +1672,7 @@ for(e=0;e==0;)
 						)
 					)
 				{
-					system("cls");
+					system("cls"); showr
 					printf("Select Card %d \n",i+1);
 					np=1;
 				}
@@ -1674,7 +1703,7 @@ for(e=0;e==0;)
 						(hc[i+1]==ac[1]) //การ์ดบนมือมีสีเดียวกับการ์ดที่ลงแล้ว
 					)
 				{
-					system("cls");
+					system("cls"); showr
 					printf("Select Card %d \n",i+1);
 					np=1;
 				}
@@ -1699,7 +1728,7 @@ for(e=0;e==0;)
 						)
 					)
 				{
-					system("cls");
+					system("cls"); showr
 					printf("Select Card %d \n",i+1);
 					np=1;
 				}
@@ -1718,7 +1747,7 @@ for(e=0;e==0;)
 						(h[i+1]==a[1])||(h[i+1]==a[2])||(h[i+1]==a[3])
 					)
 				{
-					system("cls");
+					system("cls"); showr
 					printf("Select Card %d \n",i+1);
 					np=1;
 				}
@@ -1772,7 +1801,7 @@ for(e=0;e==0;)
 							(hc[i+1]==ac[1])//การ์ดบนมือมีสีเดียวกับการ์ดที่ลงแล้ว
 						)
 					{
-						system("cls");
+						system("cls"); showr
 						printf("Select Card %d \n",i+1);
 						np=1;
 					}
@@ -1798,7 +1827,7 @@ for(e=0;e==0;)
 							)
 						)
 					{
-						system("cls");
+						system("cls"); showr
 						printf("Select Card %d \n",i+1);
 						np=1;
 					}
@@ -1834,7 +1863,7 @@ for(e=0;e==0;)
 							(hc[i+1]==ac[1])//การ์ดบนมือมีสีเดียวกับการ์ดที่ลงแล้ว
 						)
 					{
-						system("cls");
+						system("cls"); showr
 						printf("Select Card %d \n",i+1);
 						np=1;
 					}
@@ -1861,7 +1890,7 @@ for(e=0;e==0;)
 							)
 						)
 					{
-						system("cls");
+						system("cls"); showr
 						printf("Select Card %d \n",i+1);
 						np=1;
 					}
@@ -1890,7 +1919,7 @@ for(e=0;e==0;)
 						(hc[i+1]==ac[1])//การ์ดบนมือมีสีเดียวกับการ์ดที่ลงแล้ว
 					)
 				{
-					system("cls");
+					system("cls"); showr
 					printf("Select Card %d \n",i+1);
 					np=1;
 				}
@@ -1914,7 +1943,7 @@ for(e=0;e==0;)
 						)
 					)
 				{
-					system("cls");
+					system("cls"); showr
 					printf("Select Card %d \n",i+1);
 					np=1;
 				}
@@ -1946,7 +1975,7 @@ for(e=0;e==0;)
 							(hc[i+1]==ac[1])//การ์ดบนมือมีสีเดียวกับการ์ดที่ลงแล้ว
 						)
 					{
-						system("cls");
+						system("cls"); showr
 						printf("Select Card %d \n",i+1);
 						np=1;
 					}
@@ -1973,7 +2002,7 @@ for(e=0;e==0;)
 							)
 						)
 					{
-						system("cls");
+						system("cls"); showr
 						printf("Select Card %d \n",i+1);
 						np=1;
 					}
@@ -2006,7 +2035,7 @@ for(e=0;e==0;)
 						(hc[i+1]==ac[1])//การ์ดบนมือมีสีเดียวกับการ์ดที่ลงแล้ว
 					)
 				{
-					system("cls");
+					system("cls"); showr
 					printf("Select Card %d \n",i+1);
 					np=1;
 				}
@@ -2030,7 +2059,7 @@ for(e=0;e==0;)
 						)
 					)
 				{
-					system("cls");
+					system("cls"); showr
 					printf("Select Card %d \n",i+1);
 					np=1;
 				}
@@ -2062,7 +2091,7 @@ for(e=0;e==0;)
 							(hc[i+1]==ac[1])//การ์ดบนมือมีสีเดียวกับการ์ดที่ลงแล้ว
 						)
 					{
-						system("cls");
+						system("cls"); showr
 						printf("Select Card %d \n",i+1);
 						np=1;
 					}
@@ -2089,7 +2118,7 @@ for(e=0;e==0;)
 							)
 						)
 					{
-					system("cls");
+					system("cls"); showr
 					printf("Select Card %d \n",i+1);
 					np=1;
 					}
@@ -2124,7 +2153,7 @@ for(e=0;e==0;)
 							(hc[i+1]==ac[1])//การ์ดบนมือมีสีเดียวกับการ์ดที่ลงแล้ว
 						)
 					{
-						system("cls");
+						system("cls"); showr
 						printf("Select Card %d \n",i+1);
 						np=1;
 					}
@@ -2151,7 +2180,7 @@ for(e=0;e==0;)
 							)
 						)
 					{
-						system("cls");
+						system("cls"); showr
 						printf("Select Card %d \n",i+1);
 						np=1;
 					}
@@ -2183,7 +2212,7 @@ for(e=0;e==0;)
 							(hc[i+1]==ac[1])//การ์ดบนมือมีสีเดียวกับการ์ดที่ลงแล้ว
 						)
 					{
-						system("cls");
+						system("cls"); showr
 						printf("Select Card %d \n",i+1);
 						np=1;
 					}
@@ -2210,7 +2239,7 @@ for(e=0;e==0;)
 							)
 						)
 					{
-						system("cls");
+						system("cls"); showr
 						printf("Select Card %d \n",i+1);
 						np=1;
 					}
@@ -2246,7 +2275,7 @@ for(e=0;e==0;)
 							(hc[i+1]==ac[1])//การ์ดบนมือมีสีเดียวกับการ์ดที่ลงแล้ว
 						)
 					{
-						system("cls");
+						system("cls"); showr
 						printf("Select Card %d \n",i+1);
 						np=1;
 					}
@@ -2273,7 +2302,7 @@ for(e=0;e==0;)
 							)
 						)
 					{
-						system("cls");
+						system("cls"); showr
 						printf("Select Card %d \n",i+1);
 						np=1;
 					}
@@ -2308,7 +2337,7 @@ for(e=0;e==0;)
 							(hc[i+1]==ac[1])//การ์ดบนมือมีสีเดียวกับการ์ดที่ลงแล้ว
 						)
 					{
-						system("cls");
+						system("cls"); showr
 						printf("Select Card %d \n",i+1);
 						np=1;
 					}
@@ -2335,7 +2364,7 @@ for(e=0;e==0;)
 							)
 						)
 					{
-						system("cls");
+						system("cls"); showr
 						printf("Select Card %d \n",i+1);
 						np=1;
 					}
@@ -2371,7 +2400,7 @@ for(e=0;e==0;)
 							(hc[i+1]==ac[1])//การ์ดบนมือมีสีเดียวกับการ์ดที่ลงแล้ว
 						)
 					{
-						system("cls");
+						system("cls"); showr
 						printf("Select Card %d \n",i+1);
 						np=1;
 					}
@@ -2398,7 +2427,7 @@ for(e=0;e==0;)
 							)
 						)
 					{
-						system("cls");
+						system("cls"); showr
 						printf("Select Card %d \n",i+1);
 						np=1;
 					}
@@ -2431,7 +2460,7 @@ for(e=0;e==0;)
 							(hc[i+1]==ac[1])//การ์ดบนมือมีสีเดียวกับการ์ดที่ลงแล้ว
 						)
 					{
-						system("cls");
+						system("cls"); showr
 						printf("Select Card %d \n",i+1);
 						np=1;
 					}
@@ -2458,7 +2487,7 @@ for(e=0;e==0;)
 							)
 						)
 					{
-						system("cls");
+						system("cls"); showr
 						printf("Select Card %d \n",i+1);
 						np=1;
 					}
@@ -2494,7 +2523,7 @@ for(e=0;e==0;)
 							(hc[i+1]==ac[1])//การ์ดบนมือมีสีเดียวกับการ์ดที่ลงแล้ว
 						)
 					{
-						system("cls");
+						system("cls"); showr
 						printf("Select Card %d \n",i+1);
 						np=1;
 					}
@@ -2521,7 +2550,7 @@ for(e=0;e==0;)
 							)
 						)
 					{
-						system("cls");
+						system("cls"); showr
 						printf("Select Card %d \n",i+1);
 						np=1;
 					}
@@ -2557,7 +2586,7 @@ for(e=0;e==0;)
 							(hc[i+1]==ac[1])//การ์ดบนมือมีสีเดียวกับการ์ดที่ลงแล้ว
 						)
 					{
-						system("cls");
+						system("cls"); showr
 						printf("Select Card %d \n",i+1);
 						np=1;
 					}
@@ -2584,7 +2613,7 @@ for(e=0;e==0;)
 							)
 						)
 					{
-						system("cls");
+						system("cls"); showr
 						printf("Select Card %d \n",i+1);
 						np=1;
 					}
@@ -2630,7 +2659,7 @@ for(e=0;e==0;)
 					&&
 					(hc[i+1]==ac[1]))
 				{
-					system("cls");
+					system("cls"); showr
 					printf("Select Card %d \n",i+1);
 					np=1;
 				}
@@ -2652,7 +2681,7 @@ for(e=0;e==0;)
 						(hc[i+1]==ac[1])
 					)
 				{
-					system("cls");
+					system("cls"); showr
 					printf("Select Card %d \n",i+1);
 					np=1;
 				}
@@ -2676,7 +2705,7 @@ for(e=0;e==0;)
 						(hc[i+1]==ac[1])
 					)
 				{
-					system("cls");
+					system("cls"); showr
 					printf("Select Card %d \n",i+1);
 					np=1;
 				}
@@ -2697,7 +2726,7 @@ for(e=0;e==0;)
 						(hc[i+1]==ac[i+1])
 					)
 				{
-					system("cls");
+					system("cls"); showr
 					printf("Select Card %d \n",i+1);
 					np=1;
 				}
@@ -2719,7 +2748,7 @@ for(e=0;e==0;)
 						(hc[i+1]==ac[i+1])
 					)
 				{
-					system("cls");
+					system("cls"); showr
 					printf("Select Card %d \n",i+1);
 					np=1;
 				}
@@ -2742,7 +2771,7 @@ for(e=0;e==0;)
 						(hc[i+1]==ac[i+1])
 					)
 				{
-					system("cls");
+					system("cls"); showr
 					printf("Select Card %d \n",i+1);
 					np=1;
 				}
@@ -2761,7 +2790,7 @@ for(e=0;e==0;)
 						(a[i+1]==h[i+1])
 					)
 				{
-					system("cls");
+					system("cls"); showr
 					printf("Select Card %d \n",i+1);
 					np=1;
 				}
@@ -2780,7 +2809,7 @@ for(e=0;e==0;)
 						(a[i+1]==(h[i+1]+1))||(a[i+1]==(h[i+1]-1))
 					)
 				{
-					system("cls");
+					system("cls"); showr
 					printf("Select Card %d \n",i+1);
 					np=1;
 				}
@@ -2797,7 +2826,7 @@ for(e=0;e==0;)
 						(a[i+1]==(h[i+1]+2))||(a[i+1]==(h[i+1]-2))
 					)
 				{
-					system("cls");
+					system("cls"); showr
 					printf("Select Card %d \n",i+1);
 					np=1;
 				}
@@ -2818,7 +2847,7 @@ for(e=0;e==0;)
 						(hc[i+1]==ac[i+1])
 					)
 				{
-					system("cls");
+					system("cls"); showr
 					printf("Select Card %d \n",i+1);
 					np=1;
 				}
@@ -2835,7 +2864,7 @@ for(e=0;e==0;)
 						(a[i+1]==(h[i+1]+3))||(a[i+1]==(h[i+1]-32))
 					)
 				{
-					system("cls");
+					system("cls"); showr
 					printf("Select Card %d \n",i+1);
 					np=1;
 				}
@@ -2850,7 +2879,7 @@ for(e=0;e==0;)
 			{
 				if	(hc[i+1]==ac[1])
 				{
-					system("cls");
+					system("cls"); showr
 					printf("Select Card %d \n",i+1);
 					np=1;
 				}
@@ -2894,10 +2923,11 @@ for(e=0;e==0;)
 	
 	
 	
-	else if ((p!=0)&&(p!=1)&&(p!=2)&&(p!=3)&&(p!=4))
+	else
 	{
-		printf("Patten is not correct! \nPlease Enter Agian");
-	}//end not correct data
+		printf("Out of Rule \n\n p = %d",p);
+	}
+	//end not correct data
 	
 	
 	//แสดงข้อมูลที่บันทึกไว้
@@ -2914,8 +2944,22 @@ for(e=0;e==0;)
 	//
 	//		printf("Card %d on hand Color = %d\n",i+1,hc[i+1]);
 	//	}
-	getch();
 
-	system("cls");
+	//system("cls");
 }
+}
+
+void toClipboard(HWND hwnd, const std::string &s){
+	OpenClipboard(hwnd);
+	EmptyClipboard();
+	HGLOBAL hg=GlobalAlloc(GMEM_MOVEABLE,s.size()+1);
+	if (!hg){
+		CloseClipboard();
+		return;
+	}
+	memcpy(GlobalLock(hg),s.c_str(),s.size()+1);
+	GlobalUnlock(hg);
+	SetClipboardData(CF_TEXT,hg);
+	CloseClipboard();
+	GlobalFree(hg);
 }

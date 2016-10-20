@@ -17,6 +17,21 @@ int main()
 using namespace std;
 string AAA;
 
+	printf("DA Process Core v0.1\n");
+	printf("\n");
+	
+		printf("CodePattern = P A AC A1 AC1 A2 AC2 A3 AC3 A4 AC4 H1 HC1 H2 HC2 H3 HC3 H4 HC4\n");
+		printf("P = Pattern\nA = Number of Card in Stage\nAC = Color of Card in Stage\nH = Number of Card in Hand\nHC = Color of Card in Hand\n");
+		textcolor(12,0 );
+		printf("* Color Red = 1\n"); // 1 ธาตุไฟ
+		textcolor(11,0 );
+		printf("* Color Blue = 2\n"); // 2 ธาตุน้ำ
+		textcolor(10,0 );
+		printf("* Color Green = 3\n"); // 3 ธาตุป่า
+		resetcolor();
+		
+	printf("\n");
+	
 while(eloop<1)
 {
 	int f=0,np=0;
@@ -29,9 +44,12 @@ while(eloop<1)
 	//รอการป้อนรูปแบบการ์ด
 	//wait to type card patten.
 	
+	/*
 	printf("DA Process Core v0.1\n");
 	printf("\n");
 	
+		printf("CodePattern = P A AC A1 AC1 A2 AC2 A3 AC3 A4 AC4 H1 HC1 H2 HC2 H3 HC3 H4 HC4\n");
+		printf("P = Pattern\nA = Number of Card in Stage\nAC = Color of Card in Stage\nH = Number of Card in Hand\nHC = Color of Card in Hand\n");
 		textcolor(12,0 );
 		printf("* Color Red = 1\n"); // 1 ธาตุไฟ
 		textcolor(11,0 );
@@ -39,16 +57,17 @@ while(eloop<1)
 		textcolor(10,0 );
 		printf("* Color Green = 3\n"); // 3 ธาตุป่า
 		resetcolor();
+		*/
 		
 	printf("\n");
-	printf("Enter Card Unit [0-4] = ");
+	printf("EnterCode = ");
 	
 		//ตัวแปร a หมายถึงการ์ดที่ลงแล้ว
 	//ตัวแปร ac หมายถึงสีของการ์ดที่ลงแล้ว
 	//ตัวแปร h หมายถึงการ์ดบนมือ
 	//ตัวแปร hc หมายถึงสีของการ์ดบนมือ
 	//สร้างตัวแปรประเภทอาเรย์ชื่อ a, ac, h, hc จำนวน 5 (0-4) 
-	
+	long double e;
 	scanf("%1d%2d%1d%2d%1d%2d%1d%2d%1d%2d%1d%2d%1d%2d%1d%2d%1d",&p,&a[1],&ac[1],&a[2],&ac[2],&a[3],&ac[3],&a[4],&ac[4],&h[1],&hc[1],&h[2],&hc[2],&h[3],&hc[3],&h[4],&hc[4]);
 	
 	/*
@@ -117,7 +136,7 @@ while(eloop<1)
 	
 	//ตัวสอบการ Flush ของการ์ดที่ลงแล้ว (รูปแบบ 3 ใบ)
 	//Flush Check 3 Card patten
-	if(p==3)
+	else if(p==3)
 	{
 		//ถ้าสีของการ์ดใบที่ 1 = 2 และ 2 = 3 (ถ้าการ์ดทุกใบที่ลงแล้วมีสีเดียวกัน)
 		if	(
@@ -132,7 +151,7 @@ while(eloop<1)
 	
 	//ตัวสอบการ Flush ของการ์ดที่ลงแล้ว (รูปแบบ 2 ใบ)
 	//Flush Check 2 Card patten
-	if(p==2)
+	else if(p==2)
 	{
 		//ถ้าสีของการ์ดใบที่ 1 = 2 (ถ้าการ์ดทุกใบที่ลงแล้วมีสีเดียวกัน)
 		if	(
@@ -142,8 +161,11 @@ while(eloop<1)
 			f=1;
 		}
 	}
-
-
+	
+	else
+	{
+		f=0;
+	}
 		
 	
 	
@@ -175,9 +197,9 @@ while(eloop<1)
 					)
 				)
 			{
-				system("cls"); showr
+				showr
 				printf("Select Card %d is Royal Straight Flush\n",i+1);
-				np=1;
+				np=1; break;
 			}
 		}
 		
@@ -198,9 +220,9 @@ while(eloop<1)
 					)
 				)
 			{
-				system("cls"); showr
+				showr
 				printf("Select Card %d is Royal Straight Flush\n",i+1);
-				np=1;
+				np=1; break;
 			}
 		}
 		
@@ -221,9 +243,9 @@ while(eloop<1)
 					)
 				)
 			{
-				system("cls"); showr
+				showr
 				printf("Select Card %d is Royal Straight Flush\n",i+1);
-				np=1;
+				np=1; break;
 			}
 		}
 		
@@ -244,9 +266,9 @@ while(eloop<1)
 					)
 				)
 			{
-				system("cls"); showr
+				showr
 				printf("Select Card %d is Royal Straight Flush\n",i+1);
-				np=1;
+				np=1; break;
 			}
 		}
 		
@@ -267,9 +289,9 @@ while(eloop<1)
 					)
 				)
 			{
-				system("cls"); showr
+				showr
 				printf("Select Card %d is Royal Straight Flush\n",i+1);
-				np=1;
+				np=1; break;
 			}
 		}
 		
@@ -293,9 +315,9 @@ while(eloop<1)
 						)
 					)
 				{
-					system("cls"); showr
+					showr
 					printf("Select Card %d is Lucky Seven Flush\n",i+1);
-					np=1;
+					np=1; break;
 				}
 			}
 		}
@@ -314,9 +336,9 @@ while(eloop<1)
 						(h[i+1]==7)//การ์ดบนมือคือ 7
 					)
 				{
-					system("cls"); showr
+					showr
 					printf("Select Card %d is Lucky Seven \n",i+1);
-					np=1;
+					np=1; break;
 				}
 			}
 		}
@@ -341,9 +363,9 @@ while(eloop<1)
 						)
 					)
 				{
-					system("cls"); showr
+					showr
 					printf("Select Card %d is Five Flush\n",i+1);
-					np=1;
+					np=1; break;
 				}
 			}
 		}
@@ -362,9 +384,9 @@ while(eloop<1)
 						(h[i+1]==a[1]) //การ์ดบนมือเลขเดียวกับการ์ดที่ลงแล้ว
 					)
 				{
-					system("cls"); showr
+					showr
 					printf("Select Card %d is Five Card\n",i+1);
-					np=1;
+					np=1; break;
 				}
 			}
 		}
@@ -392,9 +414,9 @@ while(eloop<1)
 						)
 					)
 				{
-					system("cls"); showr
+					showr
 					printf("Select Card %d is House Flush\n",i+1);
-					np=1;
+					np=1; break;
 				}
 			}
 		
@@ -416,9 +438,9 @@ while(eloop<1)
 						)
 					)
 				{
-					system("cls"); showr
+					showr
 					printf("Select Card %d is House Flush\n",i+1);
-					np=1;
+					np=1; break;
 				}
 			}
 		
@@ -440,9 +462,9 @@ while(eloop<1)
 						)
 					)
 				{
-					system("cls"); showr
+					showr
 					printf("Select Card %d is House Flush\n",i+1);
-					np=1;
+					np=1; break;
 				}
 			}
 		}
@@ -470,9 +492,9 @@ while(eloop<1)
 						)
 					)
 				{
-					system("cls"); showr
+					showr
 					printf("Select Card %d is Straight Flush\n",i+1);
-					np=1;
+					np=1; break;
 				}
 			}
 				
@@ -494,9 +516,9 @@ while(eloop<1)
 						)
 					)
 				{
-					system("cls"); showr
+					showr
 					printf("Select Card %d is Straight Flush\n",i+1);
-					np=1;
+					np=1; break;
 				}
 			}
 			
@@ -517,9 +539,9 @@ while(eloop<1)
 						)
 					)
 				{
-					system("cls"); showr
+					showr
 					printf("Select Card %d is Straight Flush\n",i+1);
-					np=1;
+					np=1; break;
 				}
 			}
 			
@@ -540,9 +562,9 @@ while(eloop<1)
 						)
 					)
 				{
-					system("cls"); showr
+					showr
 					printf("Select Card %d is Straight Flush\n",i+1);
-					np=1;
+					np=1; break;
 				}
 			}
 			
@@ -562,9 +584,9 @@ while(eloop<1)
 						(h[i+1]==a[1]) //การ์ดบนมือเลขเดียวกับการ์ดที่ลงแล้ว
 					)
 				{
-					system("cls"); showr
+					showr
 					printf("Select Card %d is Four Card\n",i+1);
-					np=1;
+					np=1; break;
 				}
 			}	
 		}
@@ -582,9 +604,9 @@ while(eloop<1)
 						(h[i+1]==a[1]) //การ์ดบนมือเลขเดียวกับการ์ดที่ลงแล้ว
 					)
 				{
-					system("cls"); showr
+					showr
 					printf("Select Card %d is Four Card\n",i+1);
-					np=1;
+					np=1; break;
 				}
 			}	
 		}
@@ -606,9 +628,9 @@ while(eloop<1)
 						)
 					)
 				{
-					system("cls"); showr
+					showr
 					printf("Select Card %d is Full House\n",i+1);
-					np=1;
+					np=1; break;
 				}
 			}
 		
@@ -624,9 +646,9 @@ while(eloop<1)
 						(h[i+1]==a[4]) //การ์ดบนมือเลขเดียวกับการ์ดที่ลงแล้ว(ลำดับที่4)
 					)
 				{
-					system("cls"); showr
+					showr
 					printf("Select Card %d is Full House\n",i+1);
-					np=1;
+					np=1; break;
 				}
 			}
 			
@@ -642,9 +664,9 @@ while(eloop<1)
 						(h[i+1]==a[1]) //การ์ดบนมือเลขเดียวกับการ์ดที่ลงแล้ว(ลำดับที่1)
 					)
 				{
-					system("cls"); showr
+					showr
 					printf("Select Card %d is Full House\n",i+1);
-					np=1;
+					np=1; break;
 				}
 			}
 		}
@@ -667,10 +689,10 @@ while(eloop<1)
 					//การ์ดบนมือมีเลขเท่ากับการ์ดที่ลงไปแล้วใบใดใบหนึ่ง +|- 1
 				)
 				{
-					system("cls"); showr
+					showr
 					printf("Select Card %d is Straight\n",i+1);
 					st=1;
-					np=1;
+					np=1; break;
 				}
 			}
 			
@@ -691,9 +713,9 @@ while(eloop<1)
 							((h[i+1]==(a[1]-1))||(h[i+1]==(a[3]+1))) //มีการ์ดบนมือ การ์ดที่ลงแล้ว น้อยที่สุด -1 หรือ มากที่สุด +1
 						)
 					{
-						system("cls"); showr
+						showr
 						printf("Select Card %d is Straight\n",i+1);
-						np=1;
+						np=1; break;
 					}
 				}
 				
@@ -711,9 +733,9 @@ while(eloop<1)
 							((h[i+1]==(a[2]-1))||(h[i+1]==(a[2]+3))) //มีการ์ดบนมือ การ์ดที่ลงแล้ว น้อยที่สุด -1 หรือ มากที่สุด +1 
 						)
 					{
-						system("cls"); showr
+						showr
 						printf("Select Card %d is Straight\n",i+1);
-						np=1;
+						np=1; break;
 					}
 				}
 				
@@ -732,9 +754,9 @@ while(eloop<1)
 							(h[i+1]==a[2]+1) // 6
 						)
 					{
-						system("cls"); showr
+						showr
 						printf("Select Card %d is Straight\n",i+1);
-						np=1;
+						np=1; break;
 					}
 				}
 				
@@ -752,9 +774,9 @@ while(eloop<1)
 							(h[i+1]==a[3]+1) // 6
 						)
 					{
-						system("cls"); showr
+						showr
 						printf("Select Card %d is Straight\n",i+1);
-						np=1;
+						np=1; break;
 					}
 				}
 				
@@ -773,9 +795,9 @@ while(eloop<1)
 							(h[i+1]==(a[1]+1)) // 5
 						)
 					{
-						system("cls"); showr
+						showr
 						printf("Select Card %d is Straight\n",i+1);
-						np=1;
+						np=1; break;
 					}
 				}
 				
@@ -794,9 +816,9 @@ while(eloop<1)
 							(h[i+1]==(a[2]+1)) // 5
 						)
 					{
-						system("cls"); showr
+						showr
 						printf("Select Card %d is Straight\n",i+1);
-						np=1;
+						np=1; break;
 					}
 				}	
 			}
@@ -812,9 +834,9 @@ while(eloop<1)
 				{
 					if	(hc[i+1]==ac[1]) //มีการ์ดบนมือ สีเดียวกับการ์ดที่ลงแล้ว
 					{
-						system("cls"); showr
+						showr
 						printf("Select Card %d is Flush\n",i+1);
-						np=1;
+						np=1; break;
 					}
 				}	
 			}
@@ -835,9 +857,9 @@ while(eloop<1)
 						(h[i+1]==7) // มีการ์ด 7
 					)
 				{
-					system("cls"); showr
+					showr
 						printf("Select Card %d is Three Seven\n",i+1);
-					np=1;
+					np=1; break;
 				}
 			}
 			
@@ -852,9 +874,9 @@ while(eloop<1)
 						(h[i+1]==7) // มีการ์ด 7
 					)
 				{	
-					system("cls"); showr
+					showr
 						printf("Select Card %d is Three Seven\n",i+1);
-					np=1;
+					np=1; break;
 				}
 			}	
 			
@@ -869,9 +891,9 @@ while(eloop<1)
 						(h[i+1]==7) // มีการ์ด 7
 					)
 				{
-					system("cls"); showr
+					showr
 						printf("Select Card %d is Three Seven\n",i+1);
-					np=1;
+					np=1; break;
 				}
 			}
 		}
@@ -889,9 +911,9 @@ while(eloop<1)
 						(h[i+1]==a[1]) //มีการ์ดบนมือเลขเดียวกับการ์ดที่ซ้ำ
 					)
 				{
-					system("cls"); showr
+					showr
 					printf("Select Card %d is Three Card\n",i+1);
-					np=1;
+					np=1; break;
 				}
 			}
 			
@@ -907,9 +929,9 @@ while(eloop<1)
 						(h[i+1]==a[2]) //มีการ์ดบนมือเลขเดียวกับการ์ดที่ซ้ำ
 					)
 				{
-					system("cls"); showr
+					showr
 					printf("Select Card %d is Three Card\n",i+1);
-					np=1;
+					np=1; break;
 				}
 			}
 			
@@ -926,9 +948,9 @@ while(eloop<1)
 						(h[i+1]==a[3]) //มีการ์ดบนมือเลขเดียวกับการ์ดที่ซ้ำ
 					)
 				{
-					system("cls"); showr
+					showr
 					printf("Select Card %d is Three Card\n",i+1);
-					np=1;
+					np=1; break;
 				}
 			}	
 		}
@@ -948,9 +970,9 @@ while(eloop<1)
 						)
 					)
 				{
-					system("cls"); showr
+					showr
 					printf("Select Card %d is Two Pair\n",i+1);
-					np=1;
+					np=1; break;
 				}
 			}
 			
@@ -965,9 +987,9 @@ while(eloop<1)
 						)
 					)
 				{
-					system("cls"); showr
+					showr
 					printf("Select Card %d is Two Pair\n",i+1);
-					np=1;
+					np=1; break;
 				}
 			}
 			
@@ -983,9 +1005,9 @@ while(eloop<1)
 						)
 					)
 				{
-					system("cls"); showr
+					showr
 					printf("Select Card %d is Two Pair\n",i+1);
-					np=1;
+					np=1; break;
 				}
 			}
 		}
@@ -1006,9 +1028,9 @@ while(eloop<1)
 						(h[i+1]==a[4]) //มีการ์ดบนมือเลขเดียวกับการ์ดที่ลงใบใดใบหนึ่ง (ตำแหน่งที่ 4)
 					)
 				{
-					system("cls"); showr
+					showr
 					printf("Select Card %d is One Pair\n",i+1);
-					np=1;
+					np=1; break;
 				}
 			}
 		}
@@ -1025,9 +1047,9 @@ while(eloop<1)
 						((h[i+1]==a[1]-1)||(h[i+1]==a[2]+1)) // 4|7
 					)
 				{
-					system("cls"); showr
+					showr
 					printf("Select Card %d is Mini Straight\n",i+1);
-					np=1;
+					np=1; break;
 				}
 			}
 			
@@ -1043,9 +1065,9 @@ while(eloop<1)
 						((h[i+1]==a[2]-1)||(h[i+1]==a[3]+1)) // 4|7
 					)
 				{
-					system("cls"); showr
+					showr
 					printf("Select Card %d is Mini Straight\n",i+1);
-					np=1;
+					np=1; break;
 				}
 			}
 			
@@ -1060,9 +1082,9 @@ while(eloop<1)
 						((h[i+1]==a[3]-1)||(h[i+1]==a[4]+1)) // 4|7
 					)
 				{
-					system("cls"); showr
+					showr
 					printf("Select Card %d is Mini Straight\n",i+1);
-					np=1;
+					np=1; break;
 				}
 			}	
 			
@@ -1075,9 +1097,9 @@ while(eloop<1)
 						(h[i+1]==(a[1]+1)) // 5
 					)
 				{
-					system("cls"); showr
+					showr
 					printf("Select Card %d is Mini Straight\n",i+1);
-					np=1;
+					np=1; break;
 				}
 			}
 			
@@ -1090,9 +1112,9 @@ while(eloop<1)
 						(h[i+1]==(a[2]+1)) // 5
 					)
 				{
-					system("cls"); showr
+					showr
 					printf("Select Card %d is Mini Straight\n",i+1);
-					np=1;
+					np=1; break;
 				}
 			}
 			
@@ -1105,9 +1127,9 @@ while(eloop<1)
 						(h[i+1]==(a[3]+1)) // 5
 					)
 				{
-					system("cls"); showr
+					showr
 					printf("Select Card %d is Mini Straight\n",i+1);
-					np=1;
+					np=1; break;
 				}
 			}
 			
@@ -1123,18 +1145,22 @@ while(eloop<1)
 						(h[i+1]==3) // 3
 					)
 				{
-					system("cls"); showr
+					showr
 					printf("Select Card %d is Mini Straight\n",i+1);
-					np=1;
+					np=1; break;
 				}
 			}
 		}
 		
+		
 		//สุ่มการ์ด
 		//Random Card
+		if(np!=1)
+		{
 		r = rand() % 4 + 1;
+		showr
 		printf("Select Card %d is Random\n",r);
-		
+		}
 		
 		printf("\n");
 		
@@ -1167,9 +1193,9 @@ while(eloop<1)
 					)
 				)
 			{
-				system("cls"); showr
+				showr
 				printf("Select Card %d \n",i+1);
-				np=1;
+				np=1; break;
 			}
 		}
 		
@@ -1190,9 +1216,9 @@ while(eloop<1)
 						)
 					)
 				{
-					system("cls"); showr
+					showr
 					printf("Select Card %d \n",i+1);
-					np=1;
+					np=1; break;
 				}
 			}
 		
@@ -1216,9 +1242,9 @@ while(eloop<1)
 							(hc[i+1]==ac[1])
 						)
 					{
-						system("cls"); showr
+						showr
 						printf("Select Card %d \n",i+1);
-						np=1;
+						np=1; break;
 					}
 				}
 			}	
@@ -1240,9 +1266,9 @@ while(eloop<1)
 							(h[i+1]==(a[2]+1)) // 3
 						)
 					{
-						system("cls"); showr
+						showr
 						printf("Select Card %d \n",i+1);
-						np=1;
+						np=1; break;
 					}
 				}
 			}	
@@ -1267,9 +1293,9 @@ while(eloop<1)
 							(hc[i+1]==ac[1])
 						)
 					{
-						system("cls"); showr
+						showr
 						printf("Select Card %d \n",i+1);
-						np=1;
+						np=1; break;
 					}
 				}
 			}	
@@ -1290,9 +1316,9 @@ while(eloop<1)
 							(h[i+1]==(a[1]+1)) // 2
 						)
 					{
-						system("cls"); showr
+						showr
 						printf("Select Card %d \n",i+1);
-						np=1;
+						np=1; break;
 					}
 				}
 			}	
@@ -1319,9 +1345,9 @@ while(eloop<1)
 							(hc[i+1]==ac[1])
 						)
 					{
-						system("cls"); showr
+						showr
 						printf("Select Card %d \n",i+1);
-						np=1;
+						np=1; break;
 					}
 				}
 			}	
@@ -1344,9 +1370,9 @@ while(eloop<1)
 							)
 						)
 					{
-						system("cls"); showr
+						showr
 						printf("Select Card %d \n",i+1);
-						np=1;
+						np=1; break;
 					}
 				}
 			}	
@@ -1373,9 +1399,9 @@ while(eloop<1)
 							(hc[i+1]==ac[1])
 						)
 					{
-						system("cls"); showr
+						showr
 						printf("Select Card %d \n",i+1);
-						np=1;
+						np=1; break;
 					}
 				}
 			}	
@@ -1398,9 +1424,9 @@ while(eloop<1)
 							)
 						)
 					{
-						system("cls"); showr
+						showr
 						printf("Select Card %d \n",i+1);
-						np=1;
+						np=1; break;
 					}
 				}
 			}	
@@ -1427,9 +1453,9 @@ while(eloop<1)
 							(hc[i+1]==ac[1])
 						)
 					{
-						system("cls"); showr
+						showr
 						printf("Select Card %d \n",i+1);
-						np=1;
+						np=1; break;
 					}
 				}
 			}	
@@ -1452,9 +1478,9 @@ while(eloop<1)
 							)
 						)
 					{
-						system("cls"); showr
+						showr
 						printf("Select Card %d \n",i+1);
-						np=1;
+						np=1; break;
 					}
 				}
 			}
@@ -1482,9 +1508,9 @@ while(eloop<1)
 						(hc[i+1]==ac[1])
 					)
 				{
-					system("cls"); showr
+					showr
 					printf("Select Card %d \n",i+1);
-					np=1;
+					np=1; break;
 				}
 			}
 		}	
@@ -1508,9 +1534,9 @@ while(eloop<1)
 						)
 					)
 				{
-					system("cls"); showr
+					showr
 					printf("Select Card %d \n",i+1);
-					np=1;
+					np=1; break;
 				}
 			}
 		}	
@@ -1536,9 +1562,9 @@ while(eloop<1)
 						)
 					)
 				{
-					system("cls"); showr
+					showr
 					printf("Select Card %d \n",i+1);
-					np=1;
+					np=1; break;
 				}
 			}
 		}
@@ -1564,9 +1590,9 @@ while(eloop<1)
 						)
 					)
 				{
-					system("cls"); showr
+					showr
 					printf("Select Card %d \n",i+1);
-					np=1;
+					np=1; break;
 				}
 			}
 		}
@@ -1589,9 +1615,9 @@ while(eloop<1)
 						)
 					)
 				{
-					system("cls"); showr
+					showr
 					printf("Select Card %d \n",i+1);
-					np=1;
+					np=1; break;
 				}
 			}
 		}
@@ -1615,9 +1641,9 @@ while(eloop<1)
 						)
 					)
 				{
-					system("cls"); showr
+					showr
 					printf("Select Card %d \n",i+1);
-					np=1;
+					np=1; break;
 				}
 			}
 		}
@@ -1646,9 +1672,9 @@ while(eloop<1)
 						(hc[i+1]==ac[1]) //การ์ดบนมือมีสีเดียวกับการ์ดที่ลงแล้ว
 					)
 				{
-					system("cls"); showr
+					showr
 					printf("Select Card %d \n",i+1);
-					np=1;
+					np=1; break;
 				}
 			}
 		}	
@@ -1672,9 +1698,9 @@ while(eloop<1)
 						)
 					)
 				{
-					system("cls"); showr
+					showr
 					printf("Select Card %d \n",i+1);
-					np=1;
+					np=1; break;
 				}
 			}
 		}	
@@ -1703,9 +1729,9 @@ while(eloop<1)
 						(hc[i+1]==ac[1]) //การ์ดบนมือมีสีเดียวกับการ์ดที่ลงแล้ว
 					)
 				{
-					system("cls"); showr
+					showr
 					printf("Select Card %d \n",i+1);
-					np=1;
+					np=1; break;
 				}
 			}
 		}	
@@ -1728,9 +1754,9 @@ while(eloop<1)
 						)
 					)
 				{
-					system("cls"); showr
+					showr
 					printf("Select Card %d \n",i+1);
-					np=1;
+					np=1; break;
 				}
 			}
 		}	
@@ -1747,17 +1773,21 @@ while(eloop<1)
 						(h[i+1]==a[1])||(h[i+1]==a[2])||(h[i+1]==a[3])
 					)
 				{
-					system("cls"); showr
+					showr
 					printf("Select Card %d \n",i+1);
-					np=1;
+					np=1; break;
 				}
 			}
 		}	
 		
 		//สุ่มการ์ด
 		//Random Card
+		if(np!=1)
+		{
 		r = rand() % 4 + 1;
+		showr
 		printf("Select Card %d is Random\n",r);
+		}
 		
 		
 		printf("\n");
@@ -1801,9 +1831,9 @@ while(eloop<1)
 							(hc[i+1]==ac[1])//การ์ดบนมือมีสีเดียวกับการ์ดที่ลงแล้ว
 						)
 					{
-						system("cls"); showr
+						showr
 						printf("Select Card %d \n",i+1);
-						np=1;
+						np=1; break;
 					}
 				}
 			}	
@@ -1827,9 +1857,9 @@ while(eloop<1)
 							)
 						)
 					{
-						system("cls"); showr
+						showr
 						printf("Select Card %d \n",i+1);
-						np=1;
+						np=1; break;
 					}
 				}
 			}	
@@ -1863,9 +1893,9 @@ while(eloop<1)
 							(hc[i+1]==ac[1])//การ์ดบนมือมีสีเดียวกับการ์ดที่ลงแล้ว
 						)
 					{
-						system("cls"); showr
+						showr
 						printf("Select Card %d \n",i+1);
-						np=1;
+						np=1; break;
 					}
 				}
 			}	
@@ -1890,9 +1920,9 @@ while(eloop<1)
 							)
 						)
 					{
-						system("cls"); showr
+						showr
 						printf("Select Card %d \n",i+1);
-						np=1;
+						np=1; break;
 					}
 				}
 			}	
@@ -1919,9 +1949,9 @@ while(eloop<1)
 						(hc[i+1]==ac[1])//การ์ดบนมือมีสีเดียวกับการ์ดที่ลงแล้ว
 					)
 				{
-					system("cls"); showr
+					showr
 					printf("Select Card %d \n",i+1);
-					np=1;
+					np=1; break;
 				}
 			}
 		}	
@@ -1943,9 +1973,9 @@ while(eloop<1)
 						)
 					)
 				{
-					system("cls"); showr
+					showr
 					printf("Select Card %d \n",i+1);
-					np=1;
+					np=1; break;
 				}
 			}
 		}	
@@ -1975,9 +2005,9 @@ while(eloop<1)
 							(hc[i+1]==ac[1])//การ์ดบนมือมีสีเดียวกับการ์ดที่ลงแล้ว
 						)
 					{
-						system("cls"); showr
+						showr
 						printf("Select Card %d \n",i+1);
-						np=1;
+						np=1; break;
 					}
 				}
 			}	
@@ -2002,9 +2032,9 @@ while(eloop<1)
 							)
 						)
 					{
-						system("cls"); showr
+						showr
 						printf("Select Card %d \n",i+1);
-						np=1;
+						np=1; break;
 					}
 				}
 			}	
@@ -2035,9 +2065,9 @@ while(eloop<1)
 						(hc[i+1]==ac[1])//การ์ดบนมือมีสีเดียวกับการ์ดที่ลงแล้ว
 					)
 				{
-					system("cls"); showr
+					showr
 					printf("Select Card %d \n",i+1);
-					np=1;
+					np=1; break;
 				}
 			}
 		}	
@@ -2059,9 +2089,9 @@ while(eloop<1)
 						)
 					)
 				{
-					system("cls"); showr
+					showr
 					printf("Select Card %d \n",i+1);
-					np=1;
+					np=1; break;
 				}
 			}
 		}	
@@ -2091,9 +2121,9 @@ while(eloop<1)
 							(hc[i+1]==ac[1])//การ์ดบนมือมีสีเดียวกับการ์ดที่ลงแล้ว
 						)
 					{
-						system("cls"); showr
+						showr
 						printf("Select Card %d \n",i+1);
-						np=1;
+						np=1; break;
 					}
 				}
 			}	
@@ -2118,9 +2148,9 @@ while(eloop<1)
 							)
 						)
 					{
-					system("cls"); showr
+					showr
 					printf("Select Card %d \n",i+1);
-					np=1;
+					np=1; break;
 					}
 				}
 			}	
@@ -2153,9 +2183,9 @@ while(eloop<1)
 							(hc[i+1]==ac[1])//การ์ดบนมือมีสีเดียวกับการ์ดที่ลงแล้ว
 						)
 					{
-						system("cls"); showr
+						showr
 						printf("Select Card %d \n",i+1);
-						np=1;
+						np=1; break;
 					}
 				}
 			}	
@@ -2180,9 +2210,9 @@ while(eloop<1)
 							)
 						)
 					{
-						system("cls"); showr
+						showr
 						printf("Select Card %d \n",i+1);
-						np=1;
+						np=1; break;
 					}
 				}
 			}	
@@ -2212,9 +2242,9 @@ while(eloop<1)
 							(hc[i+1]==ac[1])//การ์ดบนมือมีสีเดียวกับการ์ดที่ลงแล้ว
 						)
 					{
-						system("cls"); showr
+						showr
 						printf("Select Card %d \n",i+1);
-						np=1;
+						np=1; break;
 					}
 				}
 			}	
@@ -2239,9 +2269,9 @@ while(eloop<1)
 							)
 						)
 					{
-						system("cls"); showr
+						showr
 						printf("Select Card %d \n",i+1);
-						np=1;
+						np=1; break;
 					}
 				}
 			}	
@@ -2275,9 +2305,9 @@ while(eloop<1)
 							(hc[i+1]==ac[1])//การ์ดบนมือมีสีเดียวกับการ์ดที่ลงแล้ว
 						)
 					{
-						system("cls"); showr
+						showr
 						printf("Select Card %d \n",i+1);
-						np=1;
+						np=1; break;
 					}
 				}
 			}	
@@ -2302,9 +2332,9 @@ while(eloop<1)
 							)
 						)
 					{
-						system("cls"); showr
+						showr
 						printf("Select Card %d \n",i+1);
-						np=1;
+						np=1; break;
 					}
 				}
 			}	
@@ -2337,9 +2367,9 @@ while(eloop<1)
 							(hc[i+1]==ac[1])//การ์ดบนมือมีสีเดียวกับการ์ดที่ลงแล้ว
 						)
 					{
-						system("cls"); showr
+						showr
 						printf("Select Card %d \n",i+1);
-						np=1;
+						np=1; break;
 					}
 				}
 			}	
@@ -2364,9 +2394,9 @@ while(eloop<1)
 							)
 						)
 					{
-						system("cls"); showr
+						showr
 						printf("Select Card %d \n",i+1);
-						np=1;
+						np=1; break;
 					}
 				}
 			}	
@@ -2400,9 +2430,9 @@ while(eloop<1)
 							(hc[i+1]==ac[1])//การ์ดบนมือมีสีเดียวกับการ์ดที่ลงแล้ว
 						)
 					{
-						system("cls"); showr
+						showr
 						printf("Select Card %d \n",i+1);
-						np=1;
+						np=1; break;
 					}
 				}
 			}	
@@ -2427,9 +2457,9 @@ while(eloop<1)
 							)
 						)
 					{
-						system("cls"); showr
+						showr
 						printf("Select Card %d \n",i+1);
-						np=1;
+						np=1; break;
 					}
 				}
 			}	
@@ -2460,9 +2490,9 @@ while(eloop<1)
 							(hc[i+1]==ac[1])//การ์ดบนมือมีสีเดียวกับการ์ดที่ลงแล้ว
 						)
 					{
-						system("cls"); showr
+						showr
 						printf("Select Card %d \n",i+1);
-						np=1;
+						np=1; break;
 					}
 				}
 			}	
@@ -2487,9 +2517,9 @@ while(eloop<1)
 							)
 						)
 					{
-						system("cls"); showr
+						showr
 						printf("Select Card %d \n",i+1);
-						np=1;
+						np=1; break;
 					}
 				}
 			}	
@@ -2523,9 +2553,9 @@ while(eloop<1)
 							(hc[i+1]==ac[1])//การ์ดบนมือมีสีเดียวกับการ์ดที่ลงแล้ว
 						)
 					{
-						system("cls"); showr
+						showr
 						printf("Select Card %d \n",i+1);
-						np=1;
+						np=1; break;
 					}
 				}
 			}	
@@ -2550,9 +2580,9 @@ while(eloop<1)
 							)
 						)
 					{
-						system("cls"); showr
+						showr
 						printf("Select Card %d \n",i+1);
-						np=1;
+						np=1; break;
 					}
 				}
 			}	
@@ -2586,9 +2616,9 @@ while(eloop<1)
 							(hc[i+1]==ac[1])//การ์ดบนมือมีสีเดียวกับการ์ดที่ลงแล้ว
 						)
 					{
-						system("cls"); showr
+						showr
 						printf("Select Card %d \n",i+1);
-						np=1;
+						np=1; break;
 					}
 				}
 			}	
@@ -2613,9 +2643,9 @@ while(eloop<1)
 							)
 						)
 					{
-						system("cls"); showr
+						showr
 						printf("Select Card %d \n",i+1);
-						np=1;
+						np=1; break;
 					}
 				}
 			}	
@@ -2659,9 +2689,9 @@ while(eloop<1)
 					&&
 					(hc[i+1]==ac[1]))
 				{
-					system("cls"); showr
+					showr
 					printf("Select Card %d \n",i+1);
-					np=1;
+					np=1; break;
 				}
 			}
 		}	
@@ -2681,9 +2711,9 @@ while(eloop<1)
 						(hc[i+1]==ac[1])
 					)
 				{
-					system("cls"); showr
+					showr
 					printf("Select Card %d \n",i+1);
-					np=1;
+					np=1; break;
 				}
 			}
 		}	
@@ -2705,9 +2735,9 @@ while(eloop<1)
 						(hc[i+1]==ac[1])
 					)
 				{
-					system("cls"); showr
+					showr
 					printf("Select Card %d \n",i+1);
-					np=1;
+					np=1; break;
 				}
 			}
 		}	
@@ -2726,9 +2756,9 @@ while(eloop<1)
 						(hc[i+1]==ac[i+1])
 					)
 				{
-					system("cls"); showr
+					showr
 					printf("Select Card %d \n",i+1);
-					np=1;
+					np=1; break;
 				}
 			}
 		}	
@@ -2748,9 +2778,9 @@ while(eloop<1)
 						(hc[i+1]==ac[i+1])
 					)
 				{
-					system("cls"); showr
+					showr
 					printf("Select Card %d \n",i+1);
-					np=1;
+					np=1; break;
 				}
 			}
 		}	
@@ -2771,9 +2801,9 @@ while(eloop<1)
 						(hc[i+1]==ac[i+1])
 					)
 				{
-					system("cls"); showr
+					showr
 					printf("Select Card %d \n",i+1);
-					np=1;
+					np=1; break;
 				}
 			}
 		}	
@@ -2790,9 +2820,9 @@ while(eloop<1)
 						(a[i+1]==h[i+1])
 					)
 				{
-					system("cls"); showr
+					showr
 					printf("Select Card %d \n",i+1);
-					np=1;
+					np=1; break;
 				}
 			}
 		}	
@@ -2809,9 +2839,9 @@ while(eloop<1)
 						(a[i+1]==(h[i+1]+1))||(a[i+1]==(h[i+1]-1))
 					)
 				{
-					system("cls"); showr
+					showr
 					printf("Select Card %d \n",i+1);
-					np=1;
+					np=1; break;
 				}
 			}
 		}	
@@ -2826,9 +2856,9 @@ while(eloop<1)
 						(a[i+1]==(h[i+1]+2))||(a[i+1]==(h[i+1]-2))
 					)
 				{
-					system("cls"); showr
+					showr
 					printf("Select Card %d \n",i+1);
-					np=1;
+					np=1; break;
 				}
 			}
 		}	
@@ -2847,9 +2877,9 @@ while(eloop<1)
 						(hc[i+1]==ac[i+1])
 					)
 				{
-					system("cls"); showr
+					showr
 					printf("Select Card %d \n",i+1);
-					np=1;
+					np=1; break;
 				}
 			}
 		}	
@@ -2864,9 +2894,9 @@ while(eloop<1)
 						(a[i+1]==(h[i+1]+3))||(a[i+1]==(h[i+1]-32))
 					)
 				{
-					system("cls"); showr
+					showr
 					printf("Select Card %d \n",i+1);
-					np=1;
+					np=1; break;
 				}
 			}
 		}	
@@ -2879,17 +2909,21 @@ while(eloop<1)
 			{
 				if	(hc[i+1]==ac[1])
 				{
-					system("cls"); showr
+					showr
 					printf("Select Card %d \n",i+1);
-					np=1;
+					np=1; break;
 				}
 			}
 		}	
 		
 		//สุ่มการ์ด
 		//Random Card
+		if(np!=1)
+		{
 		r = rand() % 4 + 1;
+		showr
 		printf("Select Card %d is Random\n",r);
+		}
 		
 		
 		printf("\n");
@@ -2928,6 +2962,9 @@ while(eloop<1)
 		printf("Out of Rule \n\n p = %d",p);
 	}
 	//end not correct data
+	
+	//Reset Memory Data
+	p=0,a[1]=0,ac[1]=0,a[2]=0,ac[2]=0,a[3]=0,ac[3]=0,a[4]=0,ac[4]=0,h[1]=0,hc[1]=0,h[2]=0,hc[2]=0,h[3]=0,hc[3]=0,h[4]=0,hc[4]=0;
 	
 	
 	//แสดงข้อมูลที่บันทึกไว้

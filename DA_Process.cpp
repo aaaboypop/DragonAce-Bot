@@ -20,7 +20,7 @@ string AAA;
 	printf("DA Process Core v0.1\n");
 	printf("\n");
 	
-		printf("CodePattern = P A AC A1 AC1 A2 AC2 A3 AC3 A4 AC4 H1 HC1 H2 HC2 H3 HC3 H4 HC4\n");
+		printf("CodePattern = P A1 AC1 A2 AC2 A3 AC3 A4 AC4 H1 HC1 H2 HC2 H3 HC3 H4 HC4\n");
 		printf("P = Pattern\nA = Number of Card in Stage\nAC = Color of Card in Stage\nH = Number of Card in Hand\nHC = Color of Card in Hand\n");
 		textcolor(12,0 );
 		printf("* Color Red = 1\n"); // 1 ธาตุไฟ
@@ -48,8 +48,8 @@ while(eloop<1)
 	printf("DA Process Core v0.1\n");
 	printf("\n");
 	
-		printf("CodePattern = P A AC A1 AC1 A2 AC2 A3 AC3 A4 AC4 H1 HC1 H2 HC2 H3 HC3 H4 HC4\n");
-		printf("P = Pattern\nA = Number of Card in Stage\nAC = Color of Card in Stage\nH = Number of Card in Hand\nHC = Color of Card in Hand\n");
+		printf("CodePattern = P A AC1 A2 AC2 A3 AC3 A4 AC4 H1 HC1 H2 HC2 H3 HC3 H4 HC4\n");
+		printf("P = Pattern [0=First <-> 4=Last]\nA = Number of Card in Stage [00 - 13]\nAC = Color of Card in Stage [1-3]\nH = Number of Card in Hand [00-13]\nHC = Color of Card in Hand [1-3]\n");
 		textcolor(12,0 );
 		printf("* Color Red = 1\n"); // 1 ธาตุไฟ
 		textcolor(11,0 );
@@ -2681,13 +2681,13 @@ while(eloop<1)
 		{	
 			for(i=0;i<4;i++)
 			{
-				if	((
-						(a[i+1]==10) // 10
+				if	(
+						(a[1]==10) // 10
+						&&
+						(h[i+1]==11) // 11
+						&&
+						(hc[i+1]==ac[1])
 					)
-					&&
-					(a[i+1]=11) // 11
-					&&
-					(hc[i+1]==ac[1]))
 				{
 					showr
 					printf("Select Card %d \n",i+1);
@@ -2703,10 +2703,10 @@ while(eloop<1)
 			{
 				if	(	
 						(
-							(a[i+1]==1) // 1
+							(a[1]==1) // 1
 						)
 						&&
-						(a[i+1]==13) // 13
+						(a[1]==13) // 13
 						&&
 						(hc[i+1]==ac[1])
 					)
@@ -2725,11 +2725,11 @@ while(eloop<1)
 			{
 				if	(
 						(
-							(a[i+1]==11)||(a[i+1]==12)||(a[i+1]==13) // 11 | 12 | 13
+							(a[1]==11)||(a[1]==12)||(a[1]==13) // 11 | 12 | 13
 						)
 						&&
 						(
-							(a[i+1]==(a[i+1]+1))||(a[i+1]==(a[i+1]-1)) // a +|- 1
+							(a[1]==(a[1]+1))||(a[1]==(a[1]-1)) // a +|- 1
 						)
 						&&
 						(hc[i+1]==ac[1])
@@ -2750,7 +2750,7 @@ while(eloop<1)
 			{
 				if	(
 						(
-							(a[i+1]==(h[i+1]+1))||(a[i+1]==(h[i+1]-1))
+							(a[1]==(h[i+1]+1))||(a[1]==(h[i+1]-1))
 						)
 						&&
 						(hc[i+1]==ac[i+1])
@@ -2772,7 +2772,7 @@ while(eloop<1)
 				if	
 					(
 						(
-							(a[i+1]==h[i+1])
+							(a[1]==h[i+1])
 						)
 						&&
 						(hc[i+1]==ac[i+1])
@@ -2795,7 +2795,7 @@ while(eloop<1)
 			{
 				if	(
 						(
-							(a[i+1]==(h[i+1]+2))||(a[i+1]==(h[i+1]-2))
+							(a[1]==(h[i+1]+2))||(a[1]==(h[i+1]-2))
 						)
 						&&
 						(hc[i+1]==ac[i+1])
@@ -2817,7 +2817,7 @@ while(eloop<1)
 			{
 				if	
 					(
-						(a[i+1]==h[i+1])
+						(a[1]==h[i+1])
 					)
 				{
 					showr
@@ -2836,7 +2836,7 @@ while(eloop<1)
 			for(i=0;i<4;i++)
 			{
 				if	(
-						(a[i+1]==(h[i+1]+1))||(a[i+1]==(h[i+1]-1))
+						(a[1]==(h[i+1]+1))||(a[1]==(h[i+1]-1))
 					)
 				{
 					showr
@@ -2853,7 +2853,7 @@ while(eloop<1)
 			for(i=0;i<4;i++)
 			{
 				if	(
-						(a[i+1]==(h[i+1]+2))||(a[i+1]==(h[i+1]-2))
+						(a[1]==(h[i+1]+2))||(a[1]==(h[i+1]-2))
 					)
 				{
 					showr
@@ -2871,7 +2871,7 @@ while(eloop<1)
 			{
 				if	(
 						(
-							(a[i+1]==(h[i+1]+3))||(a[i+1]==(h[i+1]-3))
+							(a[1]==(h[i+1]+3))||(a[1]==(h[i+1]-3))
 						)
 						&&
 						(hc[i+1]==ac[i+1])
@@ -2891,7 +2891,7 @@ while(eloop<1)
 			for(i=0;i<4;i++)
 			{
 				if	(
-						(a[i+1]==(h[i+1]+3))||(a[i+1]==(h[i+1]-32))
+						(a[1]==(h[i+1]+3))||(a[1]==(h[i+1]-32))
 					)
 				{
 					showr
